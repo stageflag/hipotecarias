@@ -1653,6 +1653,20 @@ footer .credits {
   color: #ffffff;
 }
 
+.call-now button.btn {
+    background: #23B973;
+    color: #fff;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.call-later button.btn {
+    background: #18BA18;
+    color: #fff;
+    margin: 10px 0;
+    height: 50px;
+}
+
 @media (min-width: 576px) {
   .intro .intro-title {
     font-size: 3.5rem;
