@@ -23,11 +23,22 @@
     u.parentNode.insertBefore(r,u);})(window,document,
     'https://sc-static.net/scevent.min.js');
 
-    snaptr('init', '3b573840-4ec0-48ed-bc78-2884ba970387', {
-    'user_email': '__INSERT_USER_EMAIL__'
-    });
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    function pixelFunction(){
+      email = $('#email').val();
+      if (validateEmail(email)) {
+        snaptr('init', '3b573840-4ec0-48ed-bc78-2884ba970387', {
+        'user_email': email
+        });
 
-    snaptr('track', 'PAGE_VIEW');
+        snaptr('track', 'PAGE_VIEW');
+      }
+    }
+
+    
 
     </script>
   <!-- End Snap Pixel Code -->
@@ -74,7 +85,7 @@
       </div>
       <div class="row">
         <div class="col-sm-12 mt-3">
-          <form class="form-a contactForm" action="" method="post" role="form">
+          <form class="form-a contactForm" action="" method="post" onsubmit="pixelFunction()" role="form">
             <div id="sendmessage">Recibimos tu mensaje, y te llamaremos pronto.</div>
             <div id="errormessage"></div>
             <div class="row">
@@ -98,7 +109,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="correo electrónico" data-rule="email" data-msg="Please enter a valid email" autocomplete="email">
+                  <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="correo electrónico" data-rule="email" id="email" data-msg="Please enter a valid email" autocomplete="email">
                   <div class="validation"></div>
                 </div>
               </div>
