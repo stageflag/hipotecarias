@@ -33,10 +33,45 @@
         snaptr('init', '3b573840-4ec0-48ed-bc78-2884ba970387', {
         'user_email': email
         });
-
         snaptr('track', 'PAGE_VIEW');
       }
+      var values_raw = $('.contactForm').serialize();
+        
+    function getLocaleDateTime(){
+        var now  = new Date();
+        var YYYY = now.getFullYear();
+        var MM   = String(now.getMonth()+1).length > 1? now.getMonth()+1 : '0'+String(now.getMonth()+1);
+        var DD   = String(now.getDate()).length > 1? now.getDate() : '0'+String(now.getDate());
+        var hh   = String(now.getHours()).length > 1? now.getHours() : '0'+String(now.getHours());
+        var mm   = String(now.getMinutes()).length > 1? now.getMinutes() : '0'+String(now.getMinutes());
+        var ss   = String(now.getSeconds()).length > 1? now.getSeconds() : '0'+String(now.getSeconds());
+        var tz   = now.getTimezoneOffset()/60;
+        var sign = "";
+
+        if(tz < 0) sign = '+'; if(tz > 0) sign = '-';
+        tz = String(Math.abs(tz)).length > 1? sign+Math.abs(tz)+':00' : sign+'0'+Math.abs(tz)+':00';
+
+        var format = YYYY+'-'+MM+'-'+DD+' '+hh+':'+mm+':'+ss+' UTC'+tz;
+
+        return format;
     }
+    $.ajax({
+            method: 'GET',
+            crossDomain: true,
+            url: 'https://hooks.zapier.com/hooks/catch/952781/731avq/',
+            data: values_raw+'&date='+getLocaleDateTime(),
+            error: function(jqXHR,textStatus,errorThrown){
+                //gtag_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
+            },
+            success: function(response) {
+                console.log("check response");
+                console.log(response);
+                // console.log('OCA started, OCA Id: ' + data.result);
+                //gtag_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
+            }
+        });
+    }
+
 
     
 
