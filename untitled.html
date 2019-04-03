@@ -34,4 +34,30 @@
 </script>
 
 </body>
+
+<script>
+    (function(){
+        ringba.campaign('JS59799af737a741b5a1777212d2c84992');
+        ringba.getNumber({
+            // Tags can be specified by adding the tag:'value' and will be tracked for every impression.
+            landingPageId:'testId'
+            }, 
+            function(numberPoolNumber){
+               replaceTextWithNumberForClass('phone-number',numberPoolNumber);
+            }, 
+            function(err){
+              alert('Error function - Number not received.');
+            }
+            );
+            // Phone numbers will be inserted into all HTML tags with the class 'phone-number'
+            function replaceTextWithNumberForClass(cssClass,phoneNumber){
+              var docs = document.getElementsByClassName(cssClass);
+                if(docs){
+                   for(var i=0;i<docs.length;i++){
+                       docs[i].innerText=phoneNumber;
+                   }
+                }
+            }         
+        })();
+</script>
 </html>
