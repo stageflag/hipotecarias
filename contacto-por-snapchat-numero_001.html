@@ -73,7 +73,9 @@
         });
     window.location.href="thankyou.html";
     }
-    
+    $("#submit_form").click(function(){
+      $('.contactForm').submit();
+    });
 
     </script>
   <!-- End Snap Pixel Code -->
@@ -127,7 +129,7 @@ Llámenos para asesoramiento hipotecario gratuito.</p>
         </div>
         <div class="col-sm-6">
           <div class="call-later">
-            <button class="btn form-control">Por favor llamame mas tarde</button>
+            <button class="btn form-control" id="submit_form">Por favor llamame mas tarde</button>
           </div>
         </div>
       </div>
