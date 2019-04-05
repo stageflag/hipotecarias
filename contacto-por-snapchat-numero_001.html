@@ -75,11 +75,11 @@
     }
     function callNow(){
     	alert(pnumber);
-        // var link = $("<a>");
-        // link.attr("href", "http://www.google.com");
-        // link.attr("title", "Google.com");
-        // link.text("Google");
-        // link.addClass("link");
+        var link = $("<a>");
+        link.attr("href", "tel:"+pnumber);
+        link.attr("title", "Gcall");
+        link.text("call");
+        link.click();
     }
 
     
@@ -116,7 +116,7 @@ Llámenos para asesoramiento hipotecario gratuito.</p>
 		        	(function(e,d) {
 		        var ringba_com_tag="JS59799af737a741b5a1777212d2c84992";
 		        var _sc = d.getElementsByTagName('script'), _s = _sc[_sc.length - 1];
-		        e._rgba = e._rgba || { q: [] }; e._rgba.q.push({ tag: ringba_com_tag,cb: GetNumber, numberClass: "phNumber", render: false, script: _s });
+		        e._rgba = e._rgba || { q: [] }; e._rgba.q.push({ tag: ringba_com_tag,cb: GetNumber, numberClass: "phNumber", script: _s });
 		        if (!(e._rgba.loading = !!e._rgba.loading)) {
 		            var sc = d.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
 		            sc.src = 'https://js.callcdn.com/js_v2/min/ringba.com.js';
