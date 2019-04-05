@@ -76,10 +76,7 @@
         });
     //window.location.href="thankyou.html";
     }
-    $("#submit_form").click(function(){
-      $('.contactForm').submit();
-    });
-
+    
     </script>
   <!-- End Snap Pixel Code -->
 </head>
@@ -200,7 +197,10 @@ Llámenos para asesoramiento hipotecario gratuito.</p>
   <script src="js/main.js"></script>
   <script>
   $(":input").inputmask();
-  $("#phone").inputmask({"mask": "(999) 999-9999"});   
+  $("#phone").inputmask({"mask": "(999) 999-9999"}); 
+  $("#submit_form").click(function(){
+      $('.contactForm').submit();
+    });  
   </script>
   
 </body>
