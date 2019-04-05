@@ -105,18 +105,21 @@ Llámenos para asesoramiento hipotecario gratuito.</p>
       <div class="row">
         <div class="col-sm-6">
           <div class="call-now">
-            <button class="btn form-control" onclick="callNow()">Llama ahora  
-		        <script> 
+            <button class="btn form-control" id="call_now" onclick="callNow()">Llama ahora  
+		        
+            </button>
+            <script> 
 
 		        	function GetNumber(number, tagId, firstTime)
 					  {
 						if(firstTime)
 					        window.pnumber = number;
+					    	$("#call_now").html("Llama ahora "+number);
 					  }
 		        	(function(e,d) {
 		        var ringba_com_tag="JS59799af737a741b5a1777212d2c84992";
 		        var _sc = d.getElementsByTagName('script'), _s = _sc[_sc.length - 1];
-		        e._rgba = e._rgba || { q: [] }; e._rgba.q.push({ tag: ringba_com_tag,cb: GetNumber, numberClass: "phNumber", script: _s });
+		        e._rgba = e._rgba || { q: [] }; e._rgba.q.push({ tag: ringba_com_tag,cb: GetNumber, numberClass: "phNumber", render: false, script: _s });
 		        if (!(e._rgba.loading = !!e._rgba.loading)) {
 		            var sc = d.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
 		            sc.src = 'https://js.callcdn.com/js_v2/min/ringba.com.js';
@@ -124,8 +127,7 @@ Llámenos para asesoramiento hipotecario gratuito.</p>
 		            e._rgba.loading = true;
 			        }
 			   })(window,document); </script>   
-			  <script type="text/javascript" src="https://trk.carbonclean.tech/trackcl.js"></script>
-            </button>           
+			  <script type="text/javascript" src="https://trk.carbonclean.tech/trackcl.js"></script>           
           </div>
         </div>
         <div class="col-sm-6">
