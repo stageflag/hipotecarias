@@ -73,14 +73,6 @@
         });
     window.location.href="thankyou.html";
     }
-    function callNow(){
-        var link = $("<a>");
-        link.attr("href", "tel:"+pnumber);
-        link.attr("title", "Gcall");
-        link.text("call");
-        link.click();
-    }
-
     
 
     </script>
@@ -104,9 +96,11 @@ Llámenos para asesoramiento hipotecario gratuito.</p>
       <div class="row">
         <div class="col-sm-6">
           <div class="call-now">
-            <button class="btn form-control" id="call_now" onclick="callNow()">Llama ahora  
+          	<a href="#" id="call_link">
+            <button class="btn form-control" id="call_now">Llama ahora  
 		        
             </button>
+            </a>
             <script> 
 
 		        	function GetNumber(number, tagId, firstTime)
@@ -114,6 +108,8 @@ Llámenos para asesoramiento hipotecario gratuito.</p>
 						if(firstTime)
 					        window.pnumber = number;
 					    	$("#call_now").html("Llama ahora "+number);
+					    	$("#call_link").attr("href", "tel:"+number);
+
 					  }
 		        	(function(e,d) {
 		        var ringba_com_tag="JS59799af737a741b5a1777212d2c84992";
