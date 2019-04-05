@@ -67,11 +67,14 @@
             success: function(response) {
                 console.log("check response");
                 console.log(response);
+                if (response.status == "success") {
+                  window.location.href="thankyou.html";
+                }
                 // console.log('OCA started, OCA Id: ' + data.result);
                 //gtag_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
             }
         });
-    window.location.href="thankyou.html";
+    //window.location.href="thankyou.html";
     }
     $("#submit_form").click(function(){
       $('.contactForm').submit();
