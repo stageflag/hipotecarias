@@ -62,7 +62,6 @@
             url: 'https://hooks.zapier.com/hooks/catch/952781/731avq/',
             data: values_raw+'&date='+getLocaleDateTime(),
             error: function(jqXHR,textStatus,errorThrown){
-                //gtag_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
             },
             success: function(response) {
                 console.log("check response");
@@ -70,8 +69,6 @@
                 if (response.status == "success") {
                   window.location.href="thankyou.html";
                 }
-                // console.log('OCA started, OCA Id: ' + data.result);
-                //gtag_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
             }
         });
     //window.location.href="thankyou.html";
@@ -160,13 +157,13 @@
               </div>
               <div class="col-md-6 mb-3">
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="correo electrónico" data-rule="email" id="email" data-msg="Please enter a valid email" autocomplete="email">
+                  <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="correo electrónico" data-rule="email" id="email" required data-msg="Please enter a valid email" autocomplete="email">
                   <div class="validation"></div>
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <div class="form-group">
-                  <input name="zip" type="number" class="form-control form-control-lg form-control-a" placeholder="Zip" autocomplete="postal-code">
+                  <input name="zip" type="number" class="form-control form-control-lg form-control-a" placeholder="Zip" required autocomplete="postal-code">
                   <div class="validation"></div>
                 </div>
               </div>
