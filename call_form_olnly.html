@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hipoteca</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--/ Contact Star /-->
+  <section class="contact mt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="video-area">
+              <iframe width="100%" min-height="315" height="100%" src="https://www.youtube.com/embed/Hb9CaUZNnTk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>           
+            </div>
+            <center>
+              <p>Nunca decimos no a un préstamo. Llámenos para asesoramiento hipotecario. Es gratis.
+            <small><a href="https://hipotecarias.us/privacidad.html">Privacidad </a></small></p>
+            </center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="call-now">
+            <a href="#" id="call_link">
+            <button class="btn form-control" id="call_now">Llama ahora  
+            
+            </button>
+            </a>
+            <script> 
+
+              function GetNumber(number, tagId, firstTime)
+            {
+            if(firstTime)
+                  window.pnumber = number;
+                $("#call_now").html("Llama ahora "+number);
+                $("#call_link").attr("href", "tel:"+number);
+
+            }
+              (function(e,d) {
+            var ringba_com_tag="JS59799af737a741b5a1777212d2c84992";
+            var _sc = d.getElementsByTagName('script'), _s = _sc[_sc.length - 1];
+            e._rgba = e._rgba || { q: [] }; e._rgba.q.push({ tag: ringba_com_tag,cb: GetNumber, numberClass: "phNumber", render: false, script: _s });
+            if (!(e._rgba.loading = !!e._rgba.loading)) {
+                var sc = d.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+                sc.src = 'https://js.callcdn.com/js_v2/min/ringba.com.js';
+                var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sc, s);
+                e._rgba.loading = true;
+              }
+         })(window,document); </script>   
+        <script type="text/javascript" src="https://trk.carbonclean.tech/trackcl.js"></script>           
+          </div>
+        </div>
+        </div>
+    <div class="col-md-12 mb-3">
+    <p><small>Registro oficial: vmax préstamos. Corredor de hipotecas acreditado. La oferta para consultarle por teléfono es completamente gratuita. No hay obligación. Si encontramos una hipoteca asequible para usted, obtendremos una comisión del prestamista. Te ayudaremos a conseguir un hogar. Ningún dato se comparte con terceros.<a href="https://hipotecarias.us/privacidad.html">Privacidad en Espanol</a><a href="http://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/1356221"><img src="./img/nmls-logo_orig.jpg" alt="nmls logo" height="42" width="42"></a></small></p>
+       </div>
+  </div>
+  </section>
+  <!--/ Contact End /-->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

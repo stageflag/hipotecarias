@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hipoteca</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Snap Pixel Code -->
+    <script type='text/javascript'>
+      var pnumber="";
+    (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+    {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+    a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+    r.src=n;var u=t.getElementsByTagName(s)[0];
+    u.parentNode.insertBefore(r,u);})(window,document,
+    'https://sc-static.net/scevent.min.js');
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    function pixelFunction(){
+      email = $('#email').val();
+      if (validateEmail(email)) {
+        snaptr('init', '3b573840-4ec0-48ed-bc78-2884ba970387', {
+        'user_email': email
+        });
+        snaptr('track', 'PAGE_VIEW');
+      }
+      var values_raw = $('.contactForm').serialize();
+        
+    function getLocaleDateTime(){
+        var now  = new Date();
+        var YYYY = now.getFullYear();
+        var MM   = String(now.getMonth()+1).length > 1? now.getMonth()+1 : '0'+String(now.getMonth()+1);
+        var DD   = String(now.getDate()).length > 1? now.getDate() : '0'+String(now.getDate());
+        var hh   = String(now.getHours()).length > 1? now.getHours() : '0'+String(now.getHours());
+        var mm   = String(now.getMinutes()).length > 1? now.getMinutes() : '0'+String(now.getMinutes());
+        var ss   = String(now.getSeconds()).length > 1? now.getSeconds() : '0'+String(now.getSeconds());
+        var tz   = now.getTimezoneOffset()/60;
+        var sign = "";
+
+        if(tz < 0) sign = '+'; if(tz > 0) sign = '-';
+        tz = String(Math.abs(tz)).length > 1? sign+Math.abs(tz)+':00' : sign+'0'+Math.abs(tz)+':00';
+
+        var format = YYYY+'-'+MM+'-'+DD+' '+hh+':'+mm+':'+ss+' UTC'+tz;
+
+        return format;
+    }
+    $.ajax({
+            method: 'GET',
+            crossDomain: true,
+            url: 'https://hooks.zapier.com/hooks/catch/952781/731avq/',
+            data: values_raw+'&date='+getLocaleDateTime(),
+            error: function(jqXHR,textStatus,errorThrown){
+            },
+            success: function(response) {
+                console.log("check response");
+                console.log(response);
+                if (response.status == "success") {
+                  window.location.href="thankyou.html";
+                }
+            }
+        });
+    //window.location.href="thankyou.html";
+    }
+    
+    </script>
+  <!-- End Snap Pixel Code -->
+</head>
+
+<body>
+
+  <!--/ Contact Star /-->
+  <section class="contact mt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="video-area">
+              <iframe width="100%" min-height="315" height="100%" src="https://www.youtube.com/embed/Hb9CaUZNnTk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>           
+            </div>
+      <p><center>Nunca decimos no a un préstamo. Llámenos para asesoramiento hipotecario. Es gratis.
+      <small><a href="https://hipotecarias.us/privacidad.html">Privacidad </a></small></p>
+      </center>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-sm-6">
+          <div class="call-later">
+            <button class="btn form-control" id="submit_form">Por favor llamame mas tarde</button>
+          </div>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-sm-12 mt-3">
+          <form class="form-a contactForm" action="" method="post" onsubmit="pixelFunction()" role="form">
+            <div id="sendmessage">Recibimos tu mensaje, y te llamaremos pronto.</div>
+            <div id="errormessage"></div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <input type="text" name="fname" class="form-control form-control-lg form-control-a" placeholder="nombre de pila" autocomplete="given-name" required autofocus>
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <input type="text" name="lname" class="form-control form-control-lg form-control-a" placeholder="el apellido" autocomplete="family-name" required autofocus>
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <input type="tel" name="phone" id="phone" class="form-control form-control-lg form-control-a" placeholder="número de teléfono" data-rule="minlen:10" data-msg="El teléfono debe tener 10 números." data-politespace data-grouplength="3,3,4" autocomplete="tel" required>
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="correo electrónico" data-rule="email" id="email" required data-msg="Please enter a valid email" autocomplete="email">
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <input name="zip" type="number" class="form-control form-control-lg form-control-a" placeholder="Zip" required autocomplete="postal-code">
+                  <div class="validation"></div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-a">enviar</button>
+              </div>
+            </div>
+          </form>          
+        </div>
+      </div>
+    <div class="col-md-12 mb-3">
+    <p><small>Registro oficial: vmax préstamos. Corredor de hipotecas acreditado. La oferta para consultarle por teléfono es completamente gratuita. No hay obligación. Si encontramos una hipoteca asequible para usted, obtendremos una comisión del prestamista. Te ayudaremos a conseguir un hogar. Ningún dato se comparte con terceros.<a href="https://hipotecarias.us/privacidad.html">Privacidad en Espanol</a><a href="http://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/1356221"><img src="./img/nmls-logo_orig.jpg" alt="nmls logo" height="42" width="42"></a></small></p>
+       </div>
+  </div>
+  </section>
+  <!--/ Contact End /-->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+  <script>
+  $(":input").inputmask();
+  $("#phone").inputmask({"mask": "(999) 999-9999"}); 
+  $("#submit_form").click(function(){
+      $('.contactForm').submit();
+    });  
+  </script>
+  
+</body>
+</html>
